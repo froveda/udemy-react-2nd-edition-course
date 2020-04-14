@@ -1,4 +1,9 @@
+# Ignore node_modules folder
+boilerplate-v1/node_modules
+expensify-app/node_modules
 indecision-app/node_modules
+portfolio-site/node_modules
+
 
 # Ignore .DS_Store
 .DS_Store
