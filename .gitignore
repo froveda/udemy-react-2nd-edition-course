@@ -4,6 +4,9 @@ expensify-app/node_modules
 indecision-app/node_modules
 portfolio-site/node_modules
 
+# Ignore VS code files
+*/launch.json
+*/.vscode/*
 
 # Ignore .DS_Store
 .DS_Store
