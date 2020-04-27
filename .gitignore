@@ -12,7 +12,4 @@ portfolio-site/node_modules
 .DS_Store
 
 # Ignore expensify-app specific files
-expensify-app/public/bundle.js
-expensify-app/public/bundle.js.map
-expensify-app/public/styles.css
-expensify-app/public/styles.css.map
+expensify-app/public/dist/
