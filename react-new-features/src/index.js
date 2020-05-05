@@ -3,15 +3,9 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
 const NoteApp = () => {
-  const notesData = JSON.parse(localStorage.getItem('notes'));
-  const [notes, setNotes] = useState(notesData || []);
+  const [notes, setNotes] = useState([]);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-
-  useEffect(() => {
-    const parsedNotes = JSON.stringify(notes);
-    localStorage.setItem('notes', parsedNotes);
-  });
 
   const addNote = (e) => {
     e.preventDefault();
@@ -29,6 +23,16 @@ const NoteApp = () => {
   const removeNote = (title) => {
     setNotes(notes.filter((note) => note.title !== title));
   }
+
+  useEffect(() => {
+    const notesData = JSON.parse(localStorage.getItem('notes'));
+    notesData && setNotes(notesData);
+  }, []);
+
+  useEffect(() => {
+    const parsedNotes = JSON.stringify(notes);
+    localStorage.setItem('notes', parsedNotes);
+  }, [notes]);
 
   return (
     <div>
