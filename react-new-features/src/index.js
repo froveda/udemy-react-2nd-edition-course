@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <div>My New Content</div>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = (props) => {
+  const [count, setCount] = useState(props.count);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+  const increment = () => {
+    setCount(count + 1);
+  }
+
+  const decrement = () => {
+    setCount(count - 1);
+  }
+
+  const reset = () => {
+    setCount(props.count);
+  }
+
+  return (
+    <React.StrictMode>
+      <div>
+        <p>The current count is {count}</p>
+        <button onClick={increment}>+1</button>
+        <button onClick={decrement}>-1</button>
+        <button onClick={reset}>reset</button>
+      </div>
+    </React.StrictMode>
+  )
+}
+
+App.defaultProps = {
+  count: 0
+}
+
+ReactDOM.render(<App count={10} />, document.getElementById('root'));
+
 serviceWorker.unregister();
