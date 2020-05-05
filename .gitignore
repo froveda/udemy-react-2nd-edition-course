@@ -4,6 +4,7 @@ boilerplate-v2/node_modules
 expensify-app/node_modules
 indecision-app/node_modules
 portfolio-site/node_modules
+react-new-features/node_modules
 
 # Ignore VS code files
 */launch.json
